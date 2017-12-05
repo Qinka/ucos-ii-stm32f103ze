@@ -9,5 +9,8 @@ compile_commands.json
 CTestTestfile.cmake
 build
 
+# for macOS
+.DS_Store
+
 # for vs code
 .vscode
