@@ -39,6 +39,10 @@ aux_source_directory(port UCOS_SRC_FILE)
 aux_source_directory(firmware UCOS_SRC_FILE)
 ## to build library
 add_library(ucos STATIC ${UCOS_SRC_FILE})
+## example
+set (CMAKE_EXE_LINKER_FLAGS " -T ${PROJECT_SOURCE_DIR}/ucos.ld")
+add_executable(example example/main.c)
+target_link_libraries(example ucos)
 ## install files
 ## target
 install(TARGETS ucos DESTINATION lib)
