@@ -114,8 +114,8 @@ g_pfnVectors:
 	.word  SVC_Handler              /* system service call via SWI instruction */
 	.word  DebugMon_Handler         /* debug monitor */
 	.word  0                        /* reserved */
-	.word  PendSV_Handler           /* pendable request for system service */
-	.word  SysTick_Handler          /* system tick */
+	.word  OS_CPU_PendSVHandler     /* pendable request for system service */
+	.word  OS_CPU_SysTickHandler    /* system tick */
 	.word  WWDG_IRQHandler          /* window watch-dog IRQ Handler */
 	.word  PVD_IRQHandler           /* PVD through EXTI Line detection interrupt */
 	.word  TAMPER_IRQHandler        /* Tamper interrupt */
@@ -249,11 +249,11 @@ g_pfnVectors:
 .weak  DebugMon_Handler
 .thumb_set DebugMon_Handler,Crash_Handler
 
-.weak  PendSV_Handler
-.thumb_set PendSV_Handler,Crash_Handler
+.weak  OS_CPU_PendSVHandler
+.thumb_set OS_CPU_PendSVHandler,Crash_Handler
 
-.weak  SysTick_Handler
-.thumb_set SysTick_Handler,Crash_Handler
+.weak  OS_CPU_SysTickHandler
+.thumb_set OS_CPU_SysTickHandler,Crash_Handler
 
 .weak  WWDG_IRQHandler
 .thumb_set WWDG_IRQHandler,Crash_Handler

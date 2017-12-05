@@ -362,12 +362,13 @@ void  OSTimeTickHook (void)
 
 void  OS_CPU_SysTickHandler (void)
 {
+    if (!OSRunning)
+        return;
+
     OS_CPU_SR  cpu_sr;
 
 
-    OS_ENTER_CRITICAL();                         /* Tell uC/OS-II that we are starting an ISR          */
-    OSIntNesting++;
-    OS_EXIT_CRITICAL();
+    OSIntEnter();
 
     OSTimeTick();                                /* Call uC/OS-II's OSTimeTick()                       */
 
