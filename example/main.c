@@ -2,6 +2,8 @@
 #include <misc.h>
 #include <stm32f10x_gpio.h>
 #include <stm32f10x_rcc.h>
+#include <rtc.h>
+#include <logger.h>
 
 
 #define START_TASK_PRIO         10 
@@ -27,10 +29,13 @@ void led_init();
 
 int main()
 {
+  rtc_init();
+  logger_init();
   led_init();
   //NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2); 
   OS_CPU_SysTickInit(10000);
   OSInit();
+  put_with_unix_time_ln("system initialized");
   OSTaskCreate(start_task,(void*)0,(OS_STK*)&START_TASK_STK[START_STK_SIZE-1],START_TASK_PRIO);
   OSStart();
 }
@@ -48,6 +53,7 @@ void start_task(void *pdata) {
 const unsigned int blink = 40;
 
 void led0_task(void *pdata) {
+  put_with_unix_time_ln("led0");
   while(1) {
     LED0_ON;
     OSTimeDly(blink*2);
@@ -61,6 +67,7 @@ void led0_task(void *pdata) {
 }
 
 void led1_task(void *pdata) {
+  put_with_unix_time_ln("led1");
   OSTimeDly(blink*6);
   while(1) {
     LED1_ON;
