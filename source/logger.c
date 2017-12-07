@@ -44,30 +44,9 @@ void put_char(char c)
 }
 
 /**
- * put_str
- * [wait]
- */
-void put_str(const char *str)
-{
-  while (*str)
-    put_char(*str++);
-}
-
-/**
- * put_str_ln
- * [wait]
- */
-void put_str_ln(const char *str)
-{
-  put_str(str);
-  put_char('\r');
-  put_char('\n');
-}
-
-/**
  * put_hex_uint8_t
  */
-void put_hex_u8(uint8_t i)
+static void put_hex_u8(uint8_t i)
 {
   char high = 0xF & (i >> 4);
   char low = 0xF & i;
@@ -77,16 +56,6 @@ void put_hex_u8(uint8_t i)
   put_char(low);
 }
 
-void put_hex_u32(uint32_t i)
-{
-  put_hex_u8(0xFF & i);
-  i >>= 8;
-  put_hex_u8(0xFF & i);
-  i >>= 8;
-  put_hex_u8(0xFF & i);
-  i >>= 8;
-  put_hex_u8(0xFF & i);
-}
 
 /**
  * put a unix time
@@ -104,16 +73,4 @@ void put_unix_time()
     time_stamp >>= 8;
     ++i;
   }
-}
-
-void put_with_unix_time(const char* p) {
-  put_unix_time();
-  put_str(": ");
-  put_str(p);
-}
-
-void put_with_unix_time_ln(const char* p) {
-  put_unix_time();
-  put_str(": ");
-  put_str_ln(p);
 }

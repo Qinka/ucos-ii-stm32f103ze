@@ -17,30 +17,6 @@
  * logger init
  */
 void logger_init(void);
-/**
- * put a char
- */
-void put_char(char);
-/**
- * put a string
- */
-void put_str(const char *);
-/**
- * put a byte in hex
- */
-void put_hex_u8(uint8_t);
-/**
- * put a unix time stamp
- */
-void put_unix_time();
-/**
- * put a string with new line
- */
-void put_str_ln(const char *);
-
-void put_with_unix_time(const char* p);
-
-void put_with_unix_time_ln(const char* p);
 
 /// register for UART
 #define _DPS_UART_ UART5
