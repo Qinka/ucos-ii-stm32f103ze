@@ -15,7 +15,7 @@
 * LICENSING TERMS:
 * ---------------
 *   uC/OS-II is provided in source form for FREE evaluation, for educational use or for peaceful research.
-* If you plan on using  uC/OS-II  in a commercial product you need to contact Micriµm to properly license
+* If you plan on using  uC/OS-II  in a commercial product you need to contact Micriï¿½m to properly license
 * its use in your product. We provide ALL the source code for your convenience and to help you experience
 * uC/OS-II.   The fact that the  source is provided does  NOT  mean that you can use it without  paying a
 * licensing fee.
@@ -41,7 +41,7 @@
 
 #define OS_MAX_EVENTS            10u   /* Max. number of event control blocks in your application      */
 #define OS_MAX_FLAGS              5u   /* Max. number of Event Flag Groups    in your application      */
-#define OS_MAX_MEM_PART           0u   /* Max. number of memory partitions                             */
+#define OS_MAX_MEM_PART           2u   /* Max. number of memory partitions                             */
 #define OS_MAX_QS                 5u   /* Max. number of queue control blocks in your application      */
 #define OS_MAX_TASKS             10u   /* Max. number of tasks in your application, MUST be >= 2       */
 
