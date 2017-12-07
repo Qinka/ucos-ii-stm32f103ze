@@ -27,9 +27,6 @@ void logger_init(void)
   GPIO_Init(_DPS_PORT_TX_, &dps_t_gpio_i_s);
   USART_Init(_DPS_UART_, &dps_uart_i_s);
   USART_Cmd(_DPS_UART_, ENABLE);
-  char done_txt[] = ": debug logger init done.";
-  put_unix_time();
-  put_str_ln(done_txt);
 }
 
 /**
