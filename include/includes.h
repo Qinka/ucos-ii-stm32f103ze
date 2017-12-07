@@ -1,9 +1,9 @@
 /*
 ************************************************************************************************
-Ö÷ÒªµÄ°üº¬ÎÄ¼þ
+ï¿½ï¿½Òªï¿½Ä°ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½
 
-ÎÄ ¼þ: INCLUDES.C ucos°üº¬ÎÄ¼þ
-×÷ Õß: Jean J. Labrosse
+ï¿½ï¿½ ï¿½ï¿½: INCLUDES.C ucosï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½
+ï¿½ï¿½ ï¿½ï¿½: Jean J. Labrosse
 ************************************************************************************************
 */
 
@@ -15,9 +15,9 @@
 #include <stdlib.h>
 #include <stdarg.h>
 
-#include "ucos_ii.h"
-#include "os_cpu.h"
-#include "os_cfg.h"
+#include <ucos_ii.h>
+#include <os_cpu.h>
+#include <os_cfg.h>
 
 #include <stm32f10x.h>	    
 
