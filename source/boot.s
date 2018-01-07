@@ -66,6 +66,7 @@ LoopFillZerobss:
   ldr  r3, = _ebss
   cmp  r2, r3
   bcc  FillZerobss
+  bcc SystemInit  
 /* Call the application's entry point.*/
   bl  main
   bx  lr    
